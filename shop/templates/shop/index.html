@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansta Club</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="top-nav">
+            <a href="/admin/">ADMIN</a>
+            <a href="login.html">LOGIN</a>
+            <a href="join.html">JOIN</a>
+            <a href="mypage.html">MYPAGE</a>
+            <a href="order.html">ORDER</a>
+            <a href="cart.html">CART</a>
+            <a href="community.html">COMMUNITY</a>
+        </div>
+        <div class="main-nav">
+            <div class="left-links">
+                <a href="best.html">BEST</a>
+                <a href="new.html">NEW</a>
+                <a href="sales.html">SALES</a>
+            </div>
+            <h1><a href="/">MANSTA CLUB</a></h1>
+            <div class="right-links">
+                <a href="blank1.html">BLANK1</a>
+                <a href="blank2.html">BLANK2</a>
+                <a href="blank3.html">BLANK3</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-carousel">
+            {% for product in products %}
+                <div class="carousel-item">
+                    <a href="#"><img src="{{ product.image.url }}" alt="{{ product.name }}"></a>
+                    <p>{{ product.name }}</p>
+                    <p>{{ product.price }}원</p>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
